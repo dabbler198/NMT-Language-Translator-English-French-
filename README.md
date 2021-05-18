@@ -1,2 +1,8 @@
 # NMT-Language-Translator-English-French-
 This is a neural machine learning model for translating English to French. 
+Neural machine translation is the use of deep neural networks for the problem of machine translation.
+The model is implemented using sequence-to-sequence NMT model consisting of Encoder and Decoder using Bahdanau’s Attention mechanism to increase the efficiency. The number of epochs we've taken is 100 and the current efficiency of the model is 90% approximately.
+Sequence-to-sequence learning (Seq2Seq) is about training models to convert sequences from one domain (e.g. sentences in English) to sequences in another domain (e.g. the same sentences translated to French).
+Here a RNN layer (or stack thereof) acts as "encoder": it processes the input sequence and returns its own internal state. Note that we discard the outputs of the encoder RNN, only recovering the state. This state will serve as the "context", or "conditioning", of the decoder in the next step.
+Another RNN layer (or stack thereof) acts as "decoder": it is trained to predict the next characters of the target sequence, given previous characters of the target sequence. Specifically, it is trained to turn the target sequences into the same sequences but offset by one timestep in the future, a training process called "teacher forcing" in this context. Importantly, the encoder uses as initial state the state vectors from the encoder, which is how the decoder obtains information about what it is supposed to generate. Effectively, the decoder learns to generate targets[t+1...] given targets[...t], conditioned on the input sequence.
+
